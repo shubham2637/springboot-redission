@@ -1,8 +1,6 @@
-package com.caching.reddissionCache.redission;
+package com.caching.reddissionCache.redissionConfig;
 
 import org.redisson.Redisson;
-import org.redisson.api.LocalCachedMapOptions;
-import org.redisson.api.RMap;
 import org.redisson.api.RedissonClient;
 import org.redisson.config.Config;
 import org.redisson.spring.cache.CacheConfig;
@@ -16,7 +14,6 @@ import org.springframework.context.annotation.Configuration;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 @Configuration
 @ComponentScan

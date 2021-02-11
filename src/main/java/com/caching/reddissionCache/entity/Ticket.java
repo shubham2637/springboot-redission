@@ -11,6 +11,24 @@ import java.util.Date;
 @Table(name = "ticket_db")
 public class Ticket implements Serializable {
     private static final long serialVersionUID = 2099219L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    @Column(name = "name")
+    @NonNull
+    private String name;
+
+    @NonNull
+    @Column(name = "assignedTo")
+    private String assignedTo;
+
+    @CreationTimestamp
+    @Temporal(TemporalType.DATE)
+    @Column(name = "assignedDate")
+    private Date assignedDate;
+
     @Override
     public String toString() {
         return "TIcket{" +
@@ -69,20 +87,4 @@ public class Ticket implements Serializable {
     public Ticket() {
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-
-    @Column(name = "name")
-    @NonNull
-    private String name;
-
-    @NonNull
-    @Column(name = "assignedTo")
-    private String assignedTo;
-
-    @CreationTimestamp
-    @Temporal(TemporalType.DATE)
-    @Column(name = "assignedDate")
-    private Date assignedDate;
 }
