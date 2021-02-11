@@ -30,7 +30,6 @@ public class RedissionConfig {
     @Bean
     CacheManager cacheManager(RedissonClient redissonClient) throws IOException {
         Map<String, CacheConfig> config = new HashMap<String, CacheConfig>();
-        // ttl = 24 mins, maxIdleTime = 12 mins
         config.put("testCache", new CacheConfig(24*60*1000, 12*60*1000));
         return new RedissonSpringCacheManager(redissonClient, config);
     }
